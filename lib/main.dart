@@ -41,13 +41,18 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
+      appBar: PreferredSize(
+        child: AppBar(),
+        preferredSize: const Size.fromHeight(0),
       ),
       body: Center(
-        child: Column(
-        ),
+        child: Column(),
       ),
+      bottomNavigationBar: BottomNavigationBar(items: const [
+        BottomNavigationBarItem(icon: Icon(Icons.today_outlined), label: "오늘"),
+        BottomNavigationBarItem(icon: Icon(Icons.assignment_ind_outlined), label: "기록"),
+        BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: "더보기"),
+      ]),
     );
   }
 }
